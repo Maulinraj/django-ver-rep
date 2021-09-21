@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Registration
+{% endblock %}
+{% block content %}
+<center>   <h1>Signup with GitHub Profile</h1> </center>
+<div class="container" class="relative">
+
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" class="button" style="button">
+    </form>
+</div>
+<div>
+    {% for mess in messages%}
+    {{mess}}
+    {% endfor %}
+</div>
+{% endblock %}

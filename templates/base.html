@@ -1,0 +1,68 @@
+{% load static %}
+<html>
+<head>
+<<style>
+.button {
+  background-color: dodgerblue; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border: 2px solid dodgerblue;
+  border-radius: 8px;
+}
+body {
+  background-image: url("https://www.teahub.io/photos/full/288-2885603_synthwave-wallpaper-gif.gif");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+
+.button:hover {
+  background-color: white;
+  color: dodgerblue;
+}
+
+input[type=text], ,input[type=password] {
+  width: 100%;
+  padding: 40px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+div.relative {
+  position: relative;
+  left: 40px;
+}
+p {
+  color:white;
+}
+h3 {
+  color:white;
+}
+li {
+  color:white;
+}
+</style>
+  <meta charset="utf-8">
+  <title>{% block title %}Django Auth Tutorial{% endblock %}</title>
+</head>
+<body>
+  <main>
+    <center>
+    <h1 style="color:Tomato;">Built by 200050137 200050098</h1>
+    <h3 style="font-size:60px;">Welcome to GitHub Profiles!!</h3>
+    </center>
+    {% block content %}
+    {% endblock %}
+  </main>
+</body>
+</html>

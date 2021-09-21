@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Explore{% endblock %}
+
+{% block content %}
+
+{% if user.is_authenticated%}
+<center>
+<a href="explore" class="button" style="button">Explore</a>
+<a href="my_profile" class="button" style="button">My Profile</a>
+<a href="logout" class="button" style="button">Logout</a>
+</center><br>
+<form action="other_profile" method="post">
+    {% for pro in profile %}
+    {% csrf_token %}
+    <button name='user_name' value={{pro.username}} style="button" class="button">{{pro.username}} ( Name :- {{pro.first_name}} {{pro.last_name}})</button><br>
+    {% endfor %}
+</form>
+
+{% else %}
+<p>You are not Logged in, Please</p><br>
+<center>
+<a href="register" class="button" style="button">Register</a><br>
+<a href="login" class="button" style="button">Login</a>
+<center>
+{%endif%}
+{% endblock %}

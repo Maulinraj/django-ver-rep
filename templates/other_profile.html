@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Explore{% endblock %}
+
+{% block content %}
+
+{% if user.is_authenticated%}
+<center>
+<a href="explore" class="button" style="button">Explore</a>
+<a href="my_profile" class="button" style="button">My Profile</a>
+<a href="logout" class="button" style="button">Logout</a>
+<br>
+<h3>Name : {{name}}</h3>
+<h3>Username : {{user_name}}</h3>
+<h3>Followers : {{followers}}</h3>
+<h3>Last Updated : {{last_update}}</h3>
+</center>
+<h3> Repositories :</h3>
+<ol>
+    {% for repo in Repo %}
+    {% csrf_token %}
+    <li>{{repo.repo_name}}  Stars :{{repo.repo_star}}</li>
+    {% endfor %}
+</ol>
+{% else %}
+<p>You are not Logged in, Please</p><br>
+<center>
+<a href="register" class="button" style="button">Register</a><br>
+<a href="login" class="button" style="button">Login</a>
+<center>
+{%endif%}
+
+{% endblock %}

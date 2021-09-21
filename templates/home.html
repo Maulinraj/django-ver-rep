@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+{% if user.is_authenticated%}
+<center>
+<a href="accounts/explore" class="button" style="button">Explore</a>
+<a href="accounts/my_profile" class="button" style="button">My Profile</a>
+<a href="accounts/logout" class="button" style="button">Logout</a>
+</center><br>
+{% else %}
+<center>
+<a href="accounts/register" class="button" style="button">Register</a><br>
+<a href="accounts/login" class="button" style="button">Login</a>
+<center>
+{%endif%}
+{% endblock %}
